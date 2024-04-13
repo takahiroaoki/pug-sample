@@ -1,18 +1,23 @@
 const path = require('path')
 const PugPlugin = require('pug-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const baseDir = __dirname
 const srcDir = path.resolve(baseDir, 'src')
+const buildDir = path.resolve(baseDir, 'build')
 
 module.exports = {
     context: srcDir,
     entry: {
-        'demo/index': './pages/demo/index.pug',
+        'templates/demo/index': './pages/demo/index.pug',
     },
     output: {
         publicPath: '/pug-sample',
+        path: buildDir,
+        filename: 'pages/[name].html',
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new PugPlugin({
             pretty: true,
             js: {
