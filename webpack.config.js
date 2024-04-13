@@ -37,14 +37,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.pug$/,
-                loader: PugPlugin.loader,
-                options: {
-                    pretty: true,
-                    method: 'compile'
-                }
-            },
-            {
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: 'ts-loader',
