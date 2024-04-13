@@ -1,28 +1,34 @@
 const path = require('path')
 const PugPlugin = require('pug-plugin')
 
-const baseDir = path.resolve(__dirname, '..')
+const baseDir = __dirname
 const srcDir = path.resolve(baseDir, 'src')
-const buildDir = path.resolve(baseDir, 'build')
 
 module.exports = {
+    context: srcDir,
     entry: {
-        'component-catalog/index': './src/pages/component-catalog/index.pug',
+        'demo/index': './pages/demo/index.pug',
     },
     output: {
-        publicPath: '/',
+        publicPath: '/pug-sample',
     },
     plugins: [
         new PugPlugin({
             pretty: true,
             js: {
-                filename: '[name].js',
+                filename: 'static/js/[name].js',
             },
             css: {
-                filename: '[name].css',
+                filename: 'static/css/[name].css',
             },
         }),
-    ],
+    ],/*
+    resolve: {
+        extensions: ['.ts', '.pug', '.scss'],
+        alias: {
+            '@src': srcDir,
+        }
+    },*/
     module: {
         rules: [
             {
@@ -40,11 +46,15 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['sass-loader'],
+                use: ['css-loader', 'sass-loader'],
             },
         ],
     },
     devServer: {
         host: '0.0.0.0',
-    }
+    },
+    watchOptions: {
+        aggregateTimeout: 200,
+        poll: 1000,
+    },
 }

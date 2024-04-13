@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack build --mode production"
+    "dev": "webpack serve --mode development"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "css-loader": "^7.1.1",
     "pug": "^3.0.2",
     "pug-plugin": "^5.2.0",
     "sass": "^1.75.0",
