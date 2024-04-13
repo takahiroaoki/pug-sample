@@ -1,0 +1,16 @@
+{
+	"name": "pug-sample",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+	],
+    "service": "pug-sample",
+	"workspaceFolder": "/app",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.vscode-typescript-next",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	}
+}
