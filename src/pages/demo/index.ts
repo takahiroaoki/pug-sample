@@ -1,1 +1,5 @@
-window.alert('hello world')
+const init = () => {
+    window.alert('DOM loaded!')
+}
+
+document.addEventListener('DOMContentLoaded', init)

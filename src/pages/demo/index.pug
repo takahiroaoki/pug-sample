@@ -1,6 +1,10 @@
-head
+extend ../../layouts/common/index.pug
+
+block head
     link(rel='stylesheet', href=require('./index.scss'))
 
-h1 Hello world!
+block body
+    h1 Hello world!
 
-script(src=require('./index.ts'))
+block script
+    script(src=require('./index.ts'))
