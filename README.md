@@ -1,8 +1,11 @@
 # pug-sample
 Frontend sample application using pug, TypeScript, scss.
 
-## requirement
-Docker Desktop
+## Requirement
+- Docker Desktop
+- VSCode & Dev Container Extension
+
+※The maintainer uses codespaces.
 
 ## setup
 ```
